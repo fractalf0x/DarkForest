@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class DarkForest {
@@ -23,9 +22,24 @@ public class DarkForest {
             hasChest = false;
             alive = true;
 
-            System.out.println("\n================================");
-            System.out.println("          THE DARK FOREST");
-            System.out.println("================================\n");
+        System.out.println("""
+        
+         .     *       .
+    *       .   .   *       .
+.       .     /\\       .        *
+   *       /\\        /  \\   .       .
+          /  \\  /\\  /    \\       *
+     /\\  /    \\/  \\/      \\  /\\       .
+    /          THE DARK FOREST       \\
+  /__________________________________\\
+             You are not alone.
+
+          SSSSS    M   M
+         S         M M M
+          SSSSS    M M M
+              S    M   M
+          SSSSS    M   M
+        """);
 
             System.out.println("You wake up in the Dark Forest. You have no memory of how you got here.\n");
             System.out.println("You see a path in front of you.\n");
@@ -48,47 +62,36 @@ public class DarkForest {
                 } else if (choice.equals("walk")) {
 
                     forestEncounter();
-
                 }
 
-            } else if (choice.equals("bacFredrik Mikaelsson lade till 4 resurser
-I går vid 14:28
-ÖvningarFL2.docx
-k")) {
+            } else if (choice.equals("back")) {
 
                 System.out.println("\nYou turn back and find yourself at the entrance of the Dark Forest.");
-                System.out.println("You have survived, but you are now lost.\n");
+                System.out.println("You turn around and begin walking toward the entrance. \n" +
 
+                                        "After a few minutes, you stop. \n \n " +
+
+                                        "Something feels wrong. \n \n " +
+
+                                        "You continue walking... \n \n " +
+
+                                        "Eventually, you realize you've passed the same tree three times. \n \n " +
+
+                                        "You turn around. \n " +
+
+                                        "The path you came from is gone. \n " +
+
+                                        "You are now deeper in the forest than before.\n ");
             }
 
-// End of game
-if (alive) {
+            // Create the alive object.
+            // This calls the constructor in alive.java.
+            alive al = new alive();
+        }
 
-    System.out.println("\nYou survived this part of the forest.");
+        System.out.println("\nGame over.");
 
-} else {
-
-    System.out.println("\nGame over.");
-
-}
-
-System.out.println("\nFinal health: " + health);
-
-showInventory();
-
-System.out.println("\nRespawn? yes/no");
-
-choice = getChoice("yes", "no");
-
-if (choice.equals("no")) {
-    playing = false;
-}
-
-}
-
-System.out.println("\nGame over.");
-
-input.close();
+        input.close();
     }
 
     // Handles player input and validates choices
@@ -191,14 +194,15 @@ input.close();
 
             if (choice.equals("fire")) {
 
-                System.out.println("\nYou build a fire and keep warm through the night. You wake up feeling refreshed and ready to continue your journey.");
+                System.out.println("\nYou build a fire and keep warm through the night.");
+                System.out.println("You wake up feeling refreshed and ready to continue your journey.");
 
             } else if (choice.equals("rest")) {
 
-                System.out.println("\nYou rest in the open, but the cold night air makes you shiver. You wake up feeling tired and weak, but you continue your journey.");
+                System.out.println("\nYou rest in the open, but the cold night air makes you shiver.");
+                System.out.println("You wake up feeling tired and weak, but you continue your journey.");
 
                 damage(20);
-
             }
 
         } else if (choice.equals("run")) {
@@ -207,7 +211,6 @@ input.close();
             System.out.println("You have survived, but you are now injured.");
 
             damage(30);
-
         }
 
         if (alive) {
@@ -271,21 +274,23 @@ input.close();
             } else {
 
                 System.out.println("You already have the chest.");
-
             }
 
         } else if (direction.equals("south")) {
 
-            System.out.println("\nYou head south and find a hidden cave. Inside, you discover ancient drawings on the walls. You take a moment to study them and feel a sense of wonder at the history of the forest. ");
+            System.out.println("\nYou head south and find a hidden cave.");
+            System.out.println("Inside, you discover ancient drawings on the walls.");
+            System.out.println("You take a moment to study them and feel a sense of wonder at the history of the forest.");
 
         } else if (direction.equals("east")) {
 
-            System.out.println("\nYou head east and come across a field of wildflowers. You take a moment to appreciate the beauty of nature.");
+            System.out.println("\nYou head east and come across a field of wildflowers.");
+            System.out.println("You take a moment to appreciate the beauty of nature.");
 
         } else if (direction.equals("west")) {
 
-            System.out.println("\nYou head west and find a small village. The villagers welcome you and offer you food and shelter.");
-
+            System.out.println("\nYou head west and find a small village.");
+            System.out.println("The villagers welcome you and offer you food and shelter.");
         }
     }
 }
